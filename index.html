@@ -3,15 +3,23 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="../build/tracking-min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
-<script src="tracking.js/build/data/face.js"></script>
-<script src="tracking.js/build/data/eye.js"></script>
-<script src="tracking.js/build/data/mouth.js"></script>
 
-
+<style>
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
+}
+</style>
 
 
 <body>
@@ -22,9 +30,27 @@
   <!-- <a href="#" class="w3-bar-item w3-button w3-col w3-center"><i class="fas fa-list"></i></a> -->
   <a href="#" class="w3-bar-item w3-button w3-col w3-right"><i class="fas fa-user-circle"></i></a>
 </div>
+<div id="container">
+	<video autoplay="true" id="videoElement">
 
+	</video>
+</div>
 
+<script>
+var video = document.querySelector("#videoElement");
 
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+</script>
 
 </body>
+
+
 </html>
