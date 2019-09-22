@@ -5,7 +5,16 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="assets/demo.css">
+
 <script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
+<script type="text/javascript" src="instascan.min.js"></script>
+
+ <script src="../build/tracking-min.js"></script>
+ <script src="../node_modules/dat.gui/build/dat.gui.min.js"></script>
+ <script src="assets/stats.min.js"></script>
+ <script src="assets/color_camera_gui.js"></script>
+
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
 
 <head>
@@ -21,6 +30,11 @@
   	height: 380px;
   	background-color: #666;
   }
+  #video, #canvas {
+    margin-left: 100px;
+    margin-top: 35px;
+    position: absolute;
+  }
   </style>
 </head>
 
@@ -34,6 +48,20 @@
   </div>
 
 
+  <!-- Tracking  -->
+  <div class="demo-title">
+    <p><a href="http://trackingjs.com" target="_parent">tracking.js</a> － choose the colors you want to detect through the controls on the right</p>
+  </div>
+
+  <div class="demo-frame">
+    <div class="demo-container">
+      <video id="video" width="600" height="450" preload autoplay loop muted controls></video>
+      <canvas id="canvas" width="600" height="450"></canvas>
+    </div>
+  </div>
+ <!-- tracking -->
+
+
   <div id="container">
   	<video autoplay="true" id="videoElement">
 
@@ -43,6 +71,9 @@
   <div class="w3-display-container w3-center w3-padding-16">
     Scan an item to search your meal
   </div>
+
+
+  <video id="preview"></video>
 
   <div class="w3-display-container w3-display-middle w3-margin-top">
     <a href="detail.html"><input type="button" class="w3-button w3-black" value="Scanned"></a>

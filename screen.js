@@ -1,5 +1,17 @@
 var video = document.querySelector("#videoElement");
 
+const Instascan = require('instascan');
+
+require('babel-polyfill');
+require('webrtc-adapter');
+
+var Instascan = {
+  Scanner: require('./src/scanner'),
+  Camera: require('./src/camera')
+};
+
+module.exports = Instascan;
+
 
 if (navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({ video: true })
@@ -30,3 +42,34 @@ function myFunction() {
   var x = document.getElementById("myRadio");
   x.checked = true;
 }
+
+
+
+window.onload = function() {
+//  var video = document.getElementById('video');
+//  var canvas = document.getElementById('canvas');
+//  var context = canvas.getContext('2d');
+  var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
+  tracking.track('#myVideo', colors);
+//  tracker.on('track', function(event) {
+//     context.clearRect(0, 0, canvas.width, canvas.height);
+
+    colors.on('track', function(event) {
+      if (event.data.length === 0) {
+        // No colors were detected in this frame.
+      } else {
+        event.data.forEach(function(rect) {
+          // rect.x, rect.y, rect.height, rect.width, rect.color
+        });
+      }
+    });
+
+
+    tracking.ColorTracker.registerColor('green', function(r, g, b) {
+      if (r < 50 && g > 200 && b < 50) {
+        return true;
+      }
+      return false;
+    });
+ //initGUIControllers(tracker);
+};
