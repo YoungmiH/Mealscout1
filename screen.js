@@ -1,27 +1,20 @@
 var video = document.querySelector("#videoElement");
 
-const Instascan = require('instascan');
 
-require('babel-polyfill');
-require('webrtc-adapter');
-
-var Instascan = {
-  Scanner: require('./src/scanner'),
-  Camera: require('./src/camera')
-};
-
-module.exports = Instascan;
+// require('babel-polyfill');
+// require('webrtc-adapter');
 
 
-if (navigator.mediaDevices.getUserMedia) {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function (stream) {
-      video.srcObject = stream;
-    })
-    .catch(function (err0r) {
-      console.log("Something went wrong!");
-    });
-}
+
+// if (navigator.mediaDevices.getUserMedia) {
+//   navigator.mediaDevices.getUserMedia({ video: true })
+//     .then(function (stream) {
+//       video.srcObject = stream;
+//     })
+//     .catch(function (err0r) {
+//       console.log("Something went wrong!");
+//     });
+// }
 
 
 function openCity(evt, cityName) {
