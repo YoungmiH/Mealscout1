@@ -8,37 +8,35 @@
 <script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
 
-<script src="build/tracking-min.js"></script>
+<script src="../build/tracking-min.js"></script>
 
 <head>
 </head>
 
   <body>
 
-<div class="w3-bar w3-gray w3-xlarge">
+<!-- Top Navigation -->
+  <!-- <div class="w3-bar w3-gray w3-xlarge">
     <div><a href="#" class="w3-bar-item w3-button w3-col"><i class="fas fa-list"></i></a></div>
     <div>Meal Scout</div>
-  </div>
+  </div> -->
 
   <video id="myVideo" width="400" height="300" preload autoplay loop muted></video>
+   <script>
+   var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
 
-     <script>
-     var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
-
-       colors.on('track', function(event) {
-         if (event.data.length === 0) {
-           console.log("No colors were detected in this frame.");
-         } else {
-           event.data.forEach(function(rect) {
-             console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
-           });
-         }
+   colors.on('track', function(event) {
+     if (event.data.length === 0) {
+       // No colors were detected in this frame.
+     } else {
+       event.data.forEach(function(rect) {
+         console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
        });
+     }
+   });
 
-   tracking.track('#myVideo', colors, { camera: true });
+   tracking.track('#myVideo', colors);
    </script>
-
-
 
   <!-- <div id="container">
   	<video autoplay="true" id="videoElement">
