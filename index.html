@@ -2,43 +2,165 @@
 <html lang="en">
 <meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="assets/demo.css">
-<script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
+<!-- <link rel="stylesheet" href="assets/demo.css"> -->
+<!-- <script src="https://kit.fontawesome.com/51ccae8c09.js"></script> -->
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
-
+<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
 <script src="build/tracking-min.js"></script>
+<script src="template.js"></script>
 
 <head>
+
+  <style>
+  #container {
+  	margin: 0px auto;
+  	width: 411px;
+  	height: 375px;
+  	border: 10px #333 solid;
+    }
+  #myVideo {
+  	width: 411px;
+  	height: 375px;
+  	background-color: #666;
+  }
+
+  .title{
+    font-size:26px;
+    font-family: 'Staatliches', cursive;
+
+  }
+
+
+
+  </style>
+
 </head>
 
   <body>
 
-<div class="w3-bar w3-gray w3-xlarge">
-    <div><a href="#" class="w3-bar-item w3-button w3-col"><i class="fas fa-list"></i></a></div>
-    <div>Meal Scout</div>
+<div class="w3-bar w3-white"  display= "inline-block">
+    <!-- <a href="#" class="w3-bar-item w3-button w3-xlarge w3-text-orange" style="width:56px"><i class="fas fa-list"></i></a> -->
+    <div class="title w3-bar-item w3-text-orange" align="center" style="width:411px" display= "inline-block">Meal Scout</div>
+    <!-- <a href="#" class="w3-bar-item w3-button" ><i class="fas fa-list"></i></a> -->
   </div>
 
-  <video id="myVideo" width="400" height="300" preload autoplay loop muted></video>
+
+  <!-- //feature detection -->
+
+
+  <div class="container">
+    <video id="myVideo" width="400" height="500" preload autoplay loop muted></video>
+          <!-- <h1>Template Matching ...using features </h1><br> -->
+          <div class="row">
+              <div class="col-md-4">
+              <canvas id="big_canvas"></canvas>
+          </div>
 
      <script>
-     var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
+     //
+     // var colors = new tracking.ColorTracker(['#DF223F', '#F8EA00', '00805C']);
+     //
+     // colors.on('track', function(event) {
+     //   if (event.data.length === 0) {
+     //     console.log("No colors were detected in this frame.");
+     //   } else {
+     //     event.data.forEach(function(rect) {
+     //       console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+     //      // document.getElementById("content").innerHTML='<object type="text/html" data="detail.html" ></object>';
+     //
+     //     });
+     //   }
+     // });
+     //
+     // tracking.track('#myVideo', colors, { camera: true });
+     blurRadius = 3;
+      canvas_big = document.getElementById("big_canvas");
+      imcanvas_big = canvas_big.getContext("2d");
+      imbig = new Image();
+      imbig.crossOrigin = "Anonymous";
+      imbig.src = "images/temA1.jpg"
+      imbig.width = 275;
+      imbig.height = 183;
+      canvas_big.width = imbig.width;
+      canvas_big.height = imbig.height;
+      imbig.onload = function(){
+      imcanvas_big.drawImage(imbig, 0, 0);
+        var imageData1 = imcanvas_big.getImageData(0, 0, canvas_big.width, canvas_big.height);
+        var gray1 = tracking.Image.grayscale(tracking.Image.blur(imageData1.data, canvas_big.width, canvas_big.height, blurRadius), canvas_big.width, canvas_big.height);
+         corners1 = tracking.Fast.findCorners(gray1, canvas_big.width, canvas_big.height);
+         descriptors1 = tracking.Brief.getDescriptors(gray1, canvas_big.width, corners1);
 
-       colors.on('track', function(event) {
-         if (event.data.length === 0) {
-           console.log("No colors were detected in this frame.");
-         } else {
-           event.data.forEach(function(rect) {
-             console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
-           });
+     // console.log(descriptors1);
+   };
+
+
+     var MyTracker = function() {
+       MyTracker(this, 'constructor');
+     }
+
+
+     var count = 0;
+     var MyTracker = function() {
+       var result = false;
+       MyTracker.prototype.track = function(pixels, width, height) {
+         // Your code here
+         // console.log("hello");
+         // console.log(pixels);
+         // console.log(width);
+         // console.log(height);
+         var corners2 = tracking.Fast.findCorners(pixels, width, height);
+         var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);
+         //console.log(descriptors1);
+         // console.log(corners1);
+         // console.log(descriptors1);
+         var matches = tracking.Brief.reciprocalMatch(corners1, descriptors1, corners2, descriptors2);
+         // console.log("Match");
+         matches.sort(function(a, b) {
+        return b.confidence - a.confidence;
+        });
+         // console.log(matches);
+         // console.log(matches.length);
+
+         if(matches.length > 40) {
+           count++;
+           console.log(matches);
+           console.log("matched: " + count + " times");
          }
-       });
 
-   tracking.track('#myVideo', colors, { camera: true });
-   </script>
+         if(count > 2) {
+           // console.log("confirm");
+           //window.location.href = 'detail.html';
+           // document.getElementById("content").innerHTML='<object type="text/html" data="detail.html" ></object>';
+           result = true;
+         }
+
+         this.emit('track', {
+           data : result
+         });
+       };
+     }
+     tracking.inherits(MyTracker, tracking.Tracker);
+     tracking.MyTracker = MyTracker;
+
+     var myTracker = new tracking.MyTracker();
+     var trackingTask = tracking.track('#myVideo', myTracker, {camera: true });
+
+     myTracker.on('track', function(event) {
+       // Results are inside the event
+       if(event.data == true) {
+         console.log(event.data);
+         console.log(trackingTask);
+         trackingTask.stop();
+         trackingTask = null;
+         window.location.href = 'detail.html';
+
+       }
+     });
 
 
+    </script>
 
   <!-- <div id="container">
   	<video autoplay="true" id="videoElement">
@@ -50,9 +172,9 @@
     Scan an item to search your meal
   </div> -->
   <!-- <video id="preview"></video> -->
-  <!-- <div class="w3-display-container w3-display-middle w3-margin-top">
-    <a href="detail.html"><input type="button" class="w3-button w3-black" value="Scanned"></a>
-  </div> -->
+  <div class="w3-display-container w3-display-middle w3-margin-top">
+    <a href="detail.html"><input type="button" class="w3-button w3-black" value="Manually Scanned"></a>
+  </div>
   <!-- <script src="screen.js" type="text/javascript"></script> -->
 
 

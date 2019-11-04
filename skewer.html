@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <body>
 
@@ -25,22 +25,45 @@
 
   <div class="w3-container" style="padding-top: 255px;">
 
-  <div class="w3-container w3-bar w3-black" style="width:500px;">
+  <!-- <div class="w3-container w3-bar w3-black" style="width:500px;">
   <button class="w3-bar-item w3-button" onclick="openCity('Ingredients')">Ingredients</button>
   <button class="w3-bar-item w3-button" onclick="openCity('Direction')">Direction</button>
+  </div> -->
+
+
+  <div class="card text-left">
+
+  <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Ingredients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Direction</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-body">
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input h6" id="customControlInline">
+        <label class="custom-control-label h6" for="customControlInline">1 pound cherry tomatoes</label>
+      </div>
+
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <label class="custom-control-label h6" for="customControlInline">3 Tablespoons olive oil or grape seed oil</label>
+      </div>
+
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <label class="custom-control-label h6" for="customControlInline">1 teaspoon Worcestershire sauce</label>
+      </div>
+      <!-- <label class="custom-control-label" for="customControlInline">2 cloves garlic</label> -->
+
+      </div>
+
+    </div>
   </div>
 
-  <div id="Ingredients" class="w3-container w3-border city">
-   <div><input type="radio" id="myRadio">  1 pound cherry tomatoes</div>
-   <div><input type="radio" id="myRadio">  3 Tablespoons olive oil or grape seed oil</div>
-   <div><input type="radio" id="myRadio">  1 teaspoon Worcestershire sauce</div>
-   <div><input type="radio" id="myRadio">  2 cloves garlic</div>
-   <div><input type="radio" id="myRadio">  salt</div>
-   <div><input type="radio" id="myRadio">  pepper</div>
-   <div><input type="radio" id="myRadio">  about 10-12 , 8" bamboo skewers</div>
-   <div><input type="radio" id="myRadio">  Sliced crusty bread</div>
-   <div><input type="radio" id="myRadio">  1 cup ricotta cheese </div>
-  </div>
   </div>
 
   <div class="w3-display-container w3-display-middle w3-margin-top" style="padding-top: 600px;">
