@@ -8,15 +8,65 @@
 <script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+
 
 <head>
   <style>
-
-.title{
-  font-size:26px;
-  font-family: 'Staatliches', cursive;
+.header{
+  background-color:#F19737;
 
 }
+
+.title{
+  font-size:21px;
+  font-family: 'Slabo 27px', serif;
+  text-align: center;
+}
+
+.item-name{
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight:bold;
+  color: #616161;
+}
+
+.item-name-dollar{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #616161;
+}
+
+.receipt-list-title{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #616161;
+  font-weight:bold;
+}
+
+.list-title{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #616161;
+  text-decoration: none;
+}
+
+.list-description{
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: #616161;
+  text-decoration: none;
+}
+
+
+
+.list-style{
+  list-style: none;
+  text-decoration: none;
+  padding: 0px;
+}
+
   </style>
 </head>
 
@@ -26,57 +76,57 @@
 <!-- Top Navigation -->
 
 
-  <div class="w3-bar w3-white"  display= "inline-block" style="box-shadow:0px 5px 5px #EEEEEE">
-      <a href="index.html" class="w3-bar-item w3-button w3-xlarge w3-text-orange" style="width:56px"><i class="fas fa-arrow-left"></i></a>
-      <div class="title w3-bar-item w3-text-orange" align="center" style="width:300px" display= "inline-block">Receipt details</div>
-      <!-- <a href="#" class="w3-bar-item w3-button" ><i class="fas fa-list"></i></a> -->
+  <div class="header w3-bar" display= "inline-block">
+      <a href="index.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
+      <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:300px;padding:13px 0" display= "inline-block">Recipe list</div>
     </div>
 
 
 
 
-  <div class="w3-center w3-padding-16 w3-text-dark-gray" ><h5>Scanned Grape Tomatoes (2 lbs.)</h5></div>
+  <div class="w3-card w3-center w3-padding-large w3-text-dark-gray" >
+    <div class="w3-container w3-cell" style="height:100px">
+     <img src="banana.jpg" style="height:100%">
+    </div>
 
-  <div class="w3-display-container" style="height:200px">
-   <img src="tomatoes.png" class="w3-display-topmiddle" style="height:80%">
+    <div class="w3-container w3-cell w3-left-align w3-cell-middle" >
+      <p class="item-name" style="height:100%">Del Monte Banana(2 lbs.)</p>
+      <p class="item-name-dollar" style="height:100%">$2.50</p>
+    </div>
   </div>
 
-  <div class="w3-center w3-padding-16"><h5>What can I cook with Grape tomatoes?</h5></div>
 
 
+  <div class="w3-left w3-padding-large w3-left-align">
+    <p class="receipt-list-title">RECEIPT LIST</p>
+  </div>
 
+  <a href="skewer.html">
+    <li class="list-style w3-bar w3-border-top w3-border-bottom w3-button">
+          <div class="w3-container w3-cell" style="height:100px;width:150px">
+          <img src="the-best-banana-cake-3.png" style="height:100%;width:100%" class="w3-bar-item w3-circle">
+          </div>
 
+        <div class="list w3-cell w3-cell-middle w3-left-align" >
+          <span class="list-title w3-large">Banana Cake</span><br>
+          <span class="list-description">Prep time: 20m</span>
+        </div>
+    </li>
+  </a>
 
+  <a href="skewer.html">
+    <li class="list-style w3-bar w3-border-bottom w3-button">
+          <div class="w3-container w3-cell" style="height:100px;width:150px">
+          <img src="Banana-Breakfast-Bars-2-of-5w.png" style="height:100%;width:100%" class="w3-bar-item w3-circle">
+          </div>
 
-  <lu class="w3-bar">
-    <span class="w3-bar-item w3-button w3-xlarge w3-right">
-      <a href="skewer.html"><i class="fas fa-chevron-right"></i></a></span>
-    <img src="skewer.png" class="w3-bar-item w3-circle" style="height:85px;width:100px">
-    <div class="w3-bar-item">
-      <span class="w3-large">gilled tomotoes skewer</span><br>
-      <span>detail</span>
-    </div>
-  </lu>
+        <div class="w3-cell w3-cell-middle w3-left-align" >
+        <span class="list-title w3-large">Banana Breakfast Bars</span><br>
+        <span class="list-description">Prep time: 20m</span>
+        </div>
+    </li>
+  </a>
 
-  <lu class="w3-bar">
-    <span class="w3-bar-item w3-button w3-xlarge w3-right">
-      <a href="detail.html"><i class="fas fa-chevron-right"></i></a></span>
-    <img src="skewer.png" class="w3-bar-item w3-circle" style="height:85px;width:100px">
-    <div class="w3-bar-item">
-      <span class="w3-large">gilled tomotoes skewer</span><br>
-      <span>detail</span>
-    </div>
-  </lu>
-
-  <lu class="w3-bar">
-    <span class="w3-bar-item w3-button w3-xlarge w3-right">
-      <a href="detail.html"><i class="fas fa-chevron-right"></i></a></span>
-    <img src="skewer.png" class="w3-bar-item w3-circle" style="height:85px;width:100px">
-    <div class="w3-bar-item">
-      <span class="w3-large">gilled tomotoes skewer</span><br>
-      <span>detail</span>
-    </div>
-  </lu>
 
 
 </body>
