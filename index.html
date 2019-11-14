@@ -4,8 +4,8 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!-- <link rel="stylesheet" href="assets/demo.css"> -->
-<!-- <script src="https://kit.fontawesome.com/51ccae8c09.js"></script> -->
+<link rel="stylesheet" href="assets/demo.css">
+<script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
 <script src="build/tracking-min.js"></script>
@@ -29,20 +29,20 @@
   .title{
     font-size:26px;
     font-family: 'Staatliches', cursive;
+    color: #EB6800;
 
   }
-
-
-
   </style>
 
 </head>
 
-  <body>
 
-<div class="w3-bar w3-white"  display= "inline-block">
+
+<body>
+
+  <div class="w3-bar w3-white"  display= "inline-block">
     <!-- <a href="#" class="w3-bar-item w3-button w3-xlarge w3-text-orange" style="width:56px"><i class="fas fa-list"></i></a> -->
-    <div class="title w3-bar-item w3-text-orange" align="center" style="width:411px" display= "inline-block">Meal Scout</div>
+    <div class="title w3-bar-item" align="center" style="width:411px" display= "inline-block">Meal Scout</div>
     <!-- <a href="#" class="w3-bar-item w3-button" ><i class="fas fa-list"></i></a> -->
   </div>
 
@@ -106,23 +106,15 @@
      var MyTracker = function() {
        var result = false;
        MyTracker.prototype.track = function(pixels, width, height) {
-         // Your code here
-         // console.log("hello");
-         // console.log(pixels);
-         // console.log(width);
-         // console.log(height);
+
          var corners2 = tracking.Fast.findCorners(pixels, width, height);
          var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);
-         //console.log(descriptors1);
-         // console.log(corners1);
-         // console.log(descriptors1);
          var matches = tracking.Brief.reciprocalMatch(corners1, descriptors1, corners2, descriptors2);
-         // console.log("Match");
+
          matches.sort(function(a, b) {
         return b.confidence - a.confidence;
         });
-         // console.log(matches);
-         // console.log(matches.length);
+
 
          if(matches.length > 40) {
            count++;
@@ -131,9 +123,6 @@
          }
 
          if(count > 2) {
-           // console.log("confirm");
-           //window.location.href = 'detail.html';
-           // document.getElementById("content").innerHTML='<object type="text/html" data="detail.html" ></object>';
            result = true;
          }
 

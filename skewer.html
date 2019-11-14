@@ -10,64 +10,132 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <head>
   <style>
-    .header{
-      background-color:#F19737;
-    }
+  .header{
+    background-color:#EB6800;
+  }
 
-    .title{
-      font-size:21px;
-      font-family: 'Slabo 27px', serif;
-      text-align: center;
-    }
+  .title{
+    font-size:21px;
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+  }
 
-    .item-name{
-      font-family: 'Nunito', sans-serif;
-      font-size: 16px;
-      font-weight:bold;
-      color: #616161;
-    }
+  .item-name{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight:bold;
+    color: #616161;
+    height:100%
 
-    .item-name-dollar{
-      font-family: 'Nunito', sans-serif;
-      font-size: 14px;
-      color: #616161;
-    }
+  }
 
-    .tab-direction{
-      height:60px;
-      width:200px;
-      padding-top:60px;
-      text-align: center;
-      color: #616161;
-    }
+  .item-name-dollar{
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: #616161;
+  }
 
-    .tab-ingredients{
-      height:60px;
-      width:200px;
-      padding-top:60px;
-      text-align:center;
-      color: #616161;
+  .tab-direction{
+    height:60px;
+    width:200px;
+    padding-top:60px;
+    text-align: center;
+    color: #616161;
+  }
 
-    }
+  .tab-ingredients{
+    height:60px;
+    width:200px;
+    padding-top:60px;
+    text-align:center;
+    color: #616161;
+  }
 
-    .w3-padding {
-        padding: 16px 16px!important;
-    }
+  .w3-padding {
+    padding: 16px 16px!important;
+  }
 
-    .tab-button {
-      padding: 0.01em 3px;
-    }
+  .tab-button {
+    padding: 0.01em 3px;
+    background-color: #FFFFFF;
+  }
 
-    button.done-button {
-      position: sticky;
-      bottom: 0;
-      text-decoration: none;
-      /* width:411px; */
+  div.done-button {
+    font-family: 'Nunito', sans-serif;
+    background-color:#EB6800;
+    font-size: 22px;
+    /* height: 30px; */
+    /* font-weight:bold; */
+    color: #FFFFFF;
+    position: sticky;
+    bottom: 0;
+    text-decoration: none;
+    /* width:411px; */
+  }
 
-    }
+  .board{
+    z-index: 1;
+  }
+
+  .content{
+    padding-top:0px;
+    z-index: 2;
+  }
+
+  div.sticky-header{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
+  .ingredients{
+    padding-top:0px;
+  }
+
+  .recipe-card{
+    background-color:#FFFFFF;
+    border-bottom: 1px solid #D0D0D0;
+  }
+
+  .ingredient-row{
+    float: left;
+    width: 33%;
+    height: 160px;
+    border: 1px solid #FFFFFF;
+    padding-top: 15px;
+  }
+
+  p.ingredient-name{
+    padding-top: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    color: #616161;
+    text-align: center;
+  }
+
+  .item-img-contianer{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/banana.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-contianer.checked{
+    background-image: url("item-icon/banana-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-padding{
+    padding-left: 20px;
+  }
 
   </style>
 </head>
@@ -75,101 +143,164 @@
 
 <body>
 
-<!-- Top Navigation -->
-  <div class="header w3-bar" display= "inline-block">
-    <a href="detail.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
-    <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:300px;padding:13px 0" display= "inline-block">Recipe details</div>
-  </div>
+  <!-- Top Navigation -->
 
+  <!-- <div class="board"> -->
+  <div class="sticky-header">
 
-  <div class="w3-card w3-center w3-padding-large w3-text-dark-gray" >
-    <div class="w3-container w3-cell" style="height:100px">
-     <img src="the-best-banana-cake-3.png" style="height:100%">
+    <div class="header w3-bar" display= "inline-block">
+      <a href="detail.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
+      <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:300px;padding:13px 0" display= "inline-block">Recipe details</div>
     </div>
 
-    <div class="w3-container w3-cell w3-left-align w3-cell-middle" style="padding-top: 10px;">
-      <p class="item-name"  style="height:100%">Banana Cake</p>
-      <p class="item-name-dollar"  style="height:100%">Prep time: 20m</p>
-    </div>
-  </div>
 
+    <div class="recipe-card w3-card w3-center w3-padding-large w3-text-dark-gray" >
+      <div class="w3-container w3-cell" style="height:100px">
+        <img src="the-best-banana-cake-3.png" style="height:100%">
+      </div>
 
-
-  <!-- <div class="w3-container w3-bar w3-black" style="width:500px;">
-  <button class="w3-bar-item w3-button" onclick="openCity('Ingredients')">Ingredients</button>
-  <button class="w3-bar-item w3-button" onclicpadding:0;k="openCity('Direction')">Direction</button>
-  </div> -->
-
-  <div class="tab-button w3-container">
-    <div class="w3-bar">
-      <a href="javascript:void(0)" onclick="openCity(event, 'London');">
-        <div class="tab-ingredients w3-cell tablink w3-bottombar w3-padding">Ingredients</div></a>
-      <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
-        <div class="tab-direction w3-cell tablink w3-bottombar w3-padding">Direction</div></a>
+      <div class="w3-container w3-cell w3-left-align w3-cell-middle" style="padding-top: 10px;">
+        <p class="item-name">Banana Cake</p>
+        <p class="item-name-dollar"  style="height:100%">Prep time: 20m</p>
+      </div>
     </div>
 
-    <div id="London" class="w3-container city w3-display-container city">
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-      <h2>Hello</h2>
-
-    </div>
-
-    <div id="Paris" class="w3-container city" style="display:none">
-      <p>Hello2</p>
-
-    </div>
-
-  </div>
-
-  <script>
-  function openCity(evt, cityName) {
-    var i, x, tablinks;
-    x = document.getElementsByClassName("city");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
 
 
-    tablinks = document.getElementsByClassName("tablink");
-    document.getElementById(cityName).style.textDecoration = "none";
+    <div class="tab-button w3-container">
+      <div class="w3-bar">
+        <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+          <div class="tab-ingredients w3-cell tablink w3-bottombar w3-padding">Ingredients</div></a>
+          <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+            <div class="tab-direction w3-cell tablink w3-bottombar w3-padding">Instructions</div></a>
+          </div>
 
-    for (i = 0; i < x.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace("w3-border-orange");
+        </div>
+      </div>
 
-    }
-    document.getElementById(cityName).style.display = "block";
-
-    evt.currentTarget.firstElementChild.className += " w3-border-orange";
-  }
-  </script>
-
-
-
-  <!-- <div class="container" style="height:60px;padding:0;">
-  <div class="container-header" style="height:100%;">
-      <ul class="nav nav-tabs container-header-tabs "  style="height:100%;">
-        <li class="nav-item w3-cell" style="height:100%;width:205px;">
-          <a class="tab-ingredients nav-link active w3-cell-middle" href="#">Ingredients</a>
-        </li>
-        <li class="nav-item w3-cell" style="height:100%;width:206px;">
-          <a class="tab-direction nav-link w3-cell-middle"  href="#">Direction</a>
-        </li>
-      </ul>
-    </div>
-  </div> -->
-
-      <a href="shoppinglist.html"><button class="done-button w3-button w3-block w3-red w3-xlarge">Continue</button></a>
-</body>
+      <div class="content">
+        <div id="London" class="ingredients w3-container city w3-display-container city">
 
 
-</html>
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>Large bananas</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>3 cups (375g) all-purpose flour</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>1 teaspoon baking powder</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>1/2 teaspoon ground cinnamon</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>3 large eggs</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>1 and 1/2 cups (360ml) buttermilk</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>1/2 teaspoon salt</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>1 cup (200g) granulated sugar</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-contianer"></div></div>
+            </a>
+            <p class='ingredient-name'>2 teaspoons pure vanilla extract</p>
+          </div>
+
+        </div>
+
+        <div id="Paris" class="w3-container city" style="display:none">
+          <p>Preheat the oven to 350°F (177°C) and grease a 9×13 inch pan.
+            Make the cake: Mash the bananas. I usually just use my mixer for this! Set mashed bananas aside.
+            Whisk the flour, baking powder, baking soda, cinnamon, and salt together. Set aside.
+            Using a handheld or stand mixer fitted with a paddle attachment, beat the butter on high speed until smooth and creamy – about 1 minute. Add both sugars and beat on high speed for 2 minutes until creamed together. Scrape down the sides and up the bottom of the bowl with a rubber spatula as needed. Add the eggs and the vanilla. Beat on medium-high speed until combined, then beat in the mashed bananas. Scrape down the sides and up the bottom of the bowl as needed. With the mixer on low speed, add the dry ingredients in three additions alternating with the buttermilk and mixing each addition just until incorporated. Do not overmix. The batter will be slightly thick and a few lumps is OK.
+            Spread batter into the prepared pan. Bake for 45-50 minutes. Baking times vary, so keep an eye on yours. The cake is done when a toothpick inserted in the center comes out clean. If you find the top of the cake is browning too quickly in the oven, loosely cover it with aluminum foil.
+            Remove the cake from the oven and set on a wire rack. Allow to cool completely. After about 45 minutes, I usually place it in the refrigerator to speed things up.
+            Make the frosting: In a large bowl using a handheld or stand mixer fitted with a paddle or whisk attachment, beat the cream cheese and butter together on high speed until smooth and creamy. Add 3 cups confectioners’ sugar, vanilla, and salt. Beat on low speed for 30 seconds, then switch to high speed and beat for 2 minutes. If you want the frosting a little thicker, add the extra 1/4 cup of confectioners sugar (I add it). Spread the frosting on the cooled cake. Refrigerate for 30 minutes before serving. This helps sets the frosting and makes cutting easier.
+            Cover leftover cake tightly and store in the refrigerator for 5 days.</p>
+
+          </div>
+
+        </div>
+
+        <a href="shoppinglist.html">
+          <div class="done-button w3-button w3-block">Go to Shopping List</div>
+        </a>
+
+        <!-- </div> -->
+
+
+
+        <script>
+        function openCity(evt, cityName) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName("city");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+
+
+          tablinks = document.getElementsByClassName("tablink");
+          document.getElementById(cityName).style.textDecoration = "none";
+
+          for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("w3-border-orange");
+
+          }
+          document.getElementById(cityName).style.display = "block";
+
+          evt.currentTarget.firstElementChild.className += " w3-border-orange";
+        }
+
+        $(".item-img-contianer").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+
+        </script>
+
+
+
+
+      </body>
+
+
+      </html>
