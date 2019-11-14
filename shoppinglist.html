@@ -27,6 +27,7 @@
   }
 
   .item-container{
+    text-decoration: none;
     padding-top:16px;
     height: 110px;
     border-bottom: 1px solid #D0D0D0;
@@ -34,7 +35,10 @@
   }
 
   .item-content{
-    padding-left:110px;
+    /* padding-left:110px; */
+    display: inline-block;
+    width: 200px;
+
   }
 
   .item-header{
@@ -58,7 +62,8 @@
     font-size: 14px;
     font-weight:bold;
     color: #616161;
-    height:100%
+    height:100%;
+    float: left;
   }
 
   div.done-button {
@@ -72,76 +77,95 @@
 
   }
 
+  .icon{
+    display: inline-block;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: #EB6800;
+  }
+
+
 
   </style>
 </head>
 
 <body>
 
-<!-- Top Navigation -->
-<div class="header w3-bar" display= "inline-block">
+  <!-- Top Navigation -->
+  <div class="header w3-bar" display= "inline-block">
     <a href="skewer.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
     <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:300px;padding:13px 0" display= "inline-block">Shopping list</div>
   </div>
 
 
-    <div class="item-container w3-bar w3-bar-item">
+  <div class="item-container w3-bar w3-bar-item">
     <img src="banana.jpg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
     <div class="item-content">
-      <span class="item-header w3-large">Bananas</span><br>
-      <span class="item-price">$2.43</span><br>
-      <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
+      <div class="item-header w3-large">Bananas</div>
+      <div class="item-price">$2.43</div>
+      <div class="item-location w3-right-align"> Aisle #3 | Shelf A43</div>
     </div>
-    </div>
+    <div onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+  </div>
 
 
-    <div class="item-container w3-bar w3-bar-item">
+  <div class="item-container w3-bar w3-bar-item">
     <img src="flour.jpeg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
     <div class="item-content">
       <span class="item-header w3-large">All-purpose flour</span><br>
       <span class="item-price">$4.53</span><br>
       <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
     </div>
-    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
 
-    <div class="item-container w3-bar w3-bar-item">
+  </div>
+
+  <div class="item-container w3-bar w3-bar-item">
     <img src="butter.jpeg" class="w3-bar-item " style="height:85px;width:100px">
     <div class="item-content">
       <span class="item-header w3-large">Unsalted butter</span><br>
       <span class="item-price">$8.53</span><br>
       <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
     </div>
-    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
 
-    <div class="item-container w3-bar w3-bar-item">
-    <img src="banana.jpg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
+  </div>
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="baking-powder.jpeg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
     <div class="item-content">
-      <span class="item-header w3-large">Bananas</span><br>
+      <span class="item-header w3-large">Baking Powder</span><br>
       <span class="item-price">$2.43</span><br>
       <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
     </div>
-    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+
+  </div>
 
 
-    <div class="item-container w3-bar w3-bar-item">
-    <img src="flour.jpeg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="Cinnamon.jpg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
     <div class="item-content">
-      <span class="item-header w3-large">All-purpose flour</span><br>
+      <span class="item-header w3-large">Cinnamon Powder</span><br>
       <span class="item-price">$4.53</span><br>
       <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
     </div>
-    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
 
-    <div class="item-container w3-bar w3-bar-item">
-    <img src="butter.jpeg" class="w3-bar-item " style="height:85px;width:100px">
+  </div>
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="eggs.jpg" class="w3-bar-item " style="height:85px;width:100px">
     <div class="item-content">
-      <span class="item-header w3-large">Unsalted butter</span><br>
+      <span class="item-header w3-large">Large eggs</span><br>
       <span class="item-price">$8.53</span><br>
       <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
     </div>
-    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
 
-      <a href="index.html"><div class="done-button w3-button w3-block">Scan another item</div></a>
+  </div>
+
+  <a href="index.html"><div class="done-button w3-button w3-block">Scan another item</div></a>
 
 </body>
 
