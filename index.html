@@ -85,10 +85,11 @@ navigator.mediaDevices.enumerateDevices()
   })
 });
 
-// const constraints = {
-//    video: {backCameraId: videoSource ? {exact: videoSource} : undefined}
-//  };
- //return navigator.mediaDevices.getUserMedia(constraints);
+const constraints = {
+  video: true,
+  facingMode: {exact: "environment"}
+ };
+ navigator.mediaDevices.getUserMedia(constraints);
 
 // }
 
