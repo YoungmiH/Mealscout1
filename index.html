@@ -221,24 +221,24 @@ navigator.mediaDevices.enumerateDevices()
           // });
         };
 
-          canvas_big3 = document.getElementById("big_canvas3");
-          imcanvas_big3 = canvas_big3.getContext("2d");
-          imbig3 = new Image();
-          imbig3.crossOrigin = "Anonymous";
-          imbig3.src = "images/kings_hawaiian_logo.png"
-          imbig3.width = 275;
-          imbig3.height = 183;
-          canvas_big3.width = imbig3.width;
-          canvas_big3.height = imbig3.height;
-          imbig3.onload = function(){
-            imcanvas_big3.drawImage(imbig3, 0, 0);
-            var imageData3 = imcanvas_big3.getImageData(0, 0, canvas_big3.width, canvas_big3.height);
-            // var gray1 = tracking.Image.grayscale(tracking.Image.blur(imageData1.data, canvas_big.width, canvas_big.height, blurRadius), canvas_big.width, canvas_big.height);
-            //tracking.Fast.THRESHOLD = 20;
-
-            corners3 = tracking.Fast.findCorners(imageData3.data, canvas_big3.width, canvas_big3.height);
-            descriptors3 = tracking.Brief.getDescriptors(imageData3.data, canvas_big3.width, corners3);
-          };
+          // canvas_big3 = document.getElementById("big_canvas3");
+          // imcanvas_big3 = canvas_big3.getContext("2d");
+          // imbig3 = new Image();
+          // imbig3.crossOrigin = "Anonymous";
+          // imbig3.src = "images/kings_hawaiian_logo.png"
+          // imbig3.width = 275;
+          // imbig3.height = 183;
+          // canvas_big3.width = imbig3.width;
+          // canvas_big3.height = imbig3.height;
+          // imbig3.onload = function(){
+          //   imcanvas_big3.drawImage(imbig3, 0, 0);
+          //   var imageData3 = imcanvas_big3.getImageData(0, 0, canvas_big3.width, canvas_big3.height);
+          //   // var gray1 = tracking.Image.grayscale(tracking.Image.blur(imageData1.data, canvas_big.width, canvas_big.height, blurRadius), canvas_big.width, canvas_big.height);
+          //   //tracking.Fast.THRESHOLD = 20;
+          //
+          //   corners3 = tracking.Fast.findCorners(imageData3.data, canvas_big3.width, canvas_big3.height);
+          //   descriptors3 = tracking.Brief.getDescriptors(imageData3.data, canvas_big3.width, corners3);
+          // };
 
 
           var MyTracker = function() {
