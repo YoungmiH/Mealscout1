@@ -80,7 +80,7 @@ navigator.mediaDevices.enumerateDevices()
     //   backCameraId = device.deviceId;
     //   document.getElementById("devices").innerHTML += "<p><b>" + device.label + " " + device.deviceId + "</b></p>";
     // } else {
-      document.getElementById("devices").innerHTML += 'update2';
+      document.getElementById("devices").innerHTML += 'update3';
       //"<p>" + device.kind + "" + device.label + " " + device.deviceId + "</p>";
     // }
   })
@@ -126,6 +126,8 @@ navigator.mediaDevices.enumerateDevices()
           console.log("No colors were detected in this frame.");
         } else {
           event.data.forEach(function(rect) {
+            document.getElementById("devices").innerHTML='SPAM';
+
             console.log("Found SPAM LOGO!");
             // console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
            // document.getElementById("content").innerHTML='<object type="text/html" data="detail.html" ></object>';
