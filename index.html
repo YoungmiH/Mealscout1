@@ -71,13 +71,25 @@ console.log(navigator.mediaDevices.enumerateDevices());
 
 // document.getElementById("devices").innerHTML =
 
+var backCameraId = "";
 navigator.mediaDevices.enumerateDevices()
 .then(function(devices) {
   devices.forEach(function(device) {
-    document.getElementById("devices").innerHTML += "<p>" + device.label + " " + device.deviceId + "</p>";
-
+    //facing back
+    if(device.kind == 'videoinput' && device.label == 'facing back') {
+      backCameraId = device.deviceId;
+      document.getElementById("devices").innerHTML += "<p><b>" + device.label + " " + device.deviceId + "</b></p>";
+    } else {
+      document.getElementById("devices").innerHTML += "<p>" + device.label + " " + device.deviceId + "</p>";
+    }
   })
 });
+
+const constraints = {
+   video: {backCameraId: videoSource ? {exact: videoSource} : undefined}
+ };
+ return navigator.mediaDevices.getUserMedia(constraints);
+
 // }
 
 
