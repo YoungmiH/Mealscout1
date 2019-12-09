@@ -104,20 +104,24 @@ navigator.mediaDevices.enumerateDevices()
 
         if(r == 35 && g == 41 && b == 103) {
           console.log("found spam blue!");
+          window.location.href = 'skewer.html';
+
             return true;
         }
         });
 
-        tracking.ColorTracker.registerColor('spam_yellow', function(r,g,b) {
-
-          // console.log(g);
-          // console.log(b);
-
-          if(r == 249 && g == 236 && b == 34) {
-            console.log("found spam yellow!");
-              return true;
-          }
-          });
+        // tracking.ColorTracker.registerColor('spam_yellow', function(r,g,b) {
+        //
+        //   // console.log(g);
+        //   // console.log(b);
+        //
+        //   if(r == 249 && g == 236 && b == 34) {
+        //     console.log("found spam yellow!");
+        //     window.location.href = 'skewer.html';
+        //
+        //       return true;
+        //   }
+        //   });
       var colors = new tracking.ColorTracker(['spam_blue']);
 
 
@@ -126,11 +130,10 @@ navigator.mediaDevices.enumerateDevices()
           console.log("No colors were detected in this frame.");
         } else {
           event.data.forEach(function(rect) {
-            document.getElementById("devices").innerHTML='SPAM';
 
             console.log("Found SPAM LOGO!");
             // console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
-           // document.getElementById("content").innerHTML='<object type="text/html" data="detail.html" ></object>';
+           // document.getElementById("content").innerHTML='<object type="text/html" data="skewer.html" ></object>';
 
           });
         }
@@ -262,8 +265,8 @@ navigator.mediaDevices.enumerateDevices()
                 return b.confidence - a.confidence;
               });
 
-              // console.log("delmonte");
-              // console.log(matches1);
+              console.log("delmonte");
+              console.log(matches1);
               // console.log("spam");
               // console.log(matches2);
               // console.log("hawaiian");
@@ -289,7 +292,7 @@ navigator.mediaDevices.enumerateDevices()
           tracking.MyTracker = MyTracker;
 
           var myTracker = new tracking.MyTracker();
-          //var trackingTask = tracking.track('#myVideo', myTracker, {camera: true });
+          var trackingTask = tracking.track('#myVideo', myTracker, {camera: true });
 
           myTracker.on('track', function(event) {
             // Results are inside the event
