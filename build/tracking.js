@@ -35,7 +35,7 @@
     childCtor.superClass_ = parentCtor.prototype;
     childCtor.prototype = new TempCtor();
     childCtor.prototype.constructor = childCtor;
-    
+
     /**
      * Calls superclass constructor/method.
      *
@@ -62,8 +62,9 @@
    * @param {object} opt_options Optional configuration to the tracker.
    */
   tracking.initUserMedia_ = function(element, opt_options) {
+    const videoCon = { facingMode: 'environment'};
     window.navigator.mediaDevices.getUserMedia({
-      video: true,
+      video: videoCon,
       audio: (opt_options && opt_options.audio) ? true : false,
     }).then(function(stream) {
       element.srcObject = stream;
