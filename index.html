@@ -67,7 +67,7 @@
       <script>
       // function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/
-console.log(navigator.mediaDevices.enumerateDevices());
+// console.log(navigator.mediaDevices.enumerateDevices());
 
 // document.getElementById("devices").innerHTML =
 
@@ -76,12 +76,12 @@ navigator.mediaDevices.enumerateDevices()
 .then(function(devices) {
   devices.forEach(function(device) {
     //facing back
-    if(device.kind == 'videoinput' && device.label == 'facing back') {
-      backCameraId = device.deviceId;
-      document.getElementById("devices").innerHTML += "<p><b>" + device.label + " " + device.deviceId + "</b></p>";
-    } else {
-      document.getElementById("devices").innerHTML += "<p>" + device.label + " " + device.deviceId + "</p>";
-    }
+    // if(device.kind == 'videoinput' && device.label == 'facing back') {
+    //   backCameraId = device.deviceId;
+    //   document.getElementById("devices").innerHTML += "<p><b>" + device.label + " " + device.deviceId + "</b></p>";
+    // } else {
+      document.getElementById("devices").innerHTML += "<p>" + device.kind + "" + device.label + " " + device.deviceId + "</p>";
+    // }
   })
 });
 
@@ -90,6 +90,7 @@ const constraints = {
   facingMode: {exact: "environment"}
  };
  navigator.mediaDevices.getUserMedia(constraints);
+
 
 // }
 
