@@ -74,7 +74,6 @@ console.log(navigator.mediaDevices.enumerateDevices());
 navigator.mediaDevices.enumerateDevices()
 .then(function(devices) {
   devices.forEach(function(device) {
-    if(device.kind == 'videoinput')
     document.getElementById("devices").innerHTML += "<p>" + device.kind + " " + device.deviceId + "</p>";
 
   })
