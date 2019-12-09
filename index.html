@@ -74,7 +74,7 @@ console.log(navigator.mediaDevices.enumerateDevices());
 navigator.mediaDevices.enumerateDevices()
 .then(function(devices) {
   devices.forEach(function(device) {
-    document.getElementById("devices").innerHTML += "<p>" + device.kind + " " + device.deviceId + "</p>";
+    document.getElementById("devices").innerHTML += "<p>" + device.label + " " + device.deviceId + "</p>";
 
   })
 });
