@@ -80,7 +80,7 @@ navigator.mediaDevices.enumerateDevices()
     //   backCameraId = device.deviceId;
     //   document.getElementById("devices").innerHTML += "<p><b>" + device.label + " " + device.deviceId + "</b></p>";
     // } else {
-      document.getElementById("devices").innerHTML += 'update3';
+      // document.getElementById("devices").innerHTML += 'update3';
       //"<p>" + device.kind + "" + device.label + " " + device.deviceId + "</p>";
     // }
   })
@@ -258,12 +258,12 @@ navigator.mediaDevices.enumerateDevices()
               var scannedCorners = tracking.Fast.findCorners(pixels, width, height);
               var scannedDescriptors = tracking.Brief.getDescriptors(pixels, width, scannedCorners);
               var matches1 = tracking.Brief.reciprocalMatch(corners1, descriptors1, scannedCorners, scannedDescriptors);
-              var matches2 = tracking.Brief.reciprocalMatch(corners2, descriptors2, scannedCorners, scannedDescriptors);
-              var matches3 = tracking.Brief.reciprocalMatch(corners3, descriptors3, scannedCorners, scannedDescriptors);
+              //var matches2 = tracking.Brief.reciprocalMatch(corners2, descriptors2, scannedCorners, scannedDescriptors);
+              //var matches3 = tracking.Brief.reciprocalMatch(corners3, descriptors3, scannedCorners, scannedDescriptors);
 
-              matches2.sort(function(a, b) {
-                return b.confidence - a.confidence;
-              });
+              // matches2.sort(function(a, b) {
+              //   return b.confidence - a.confidence;
+              // });
 
               console.log("delmonte");
               console.log(matches1);
@@ -277,6 +277,8 @@ navigator.mediaDevices.enumerateDevices()
                 count++;
                 console.log(matches1);
                 console.log("matched: " + count + " times");
+                trackingTask.stop();
+                window.location.href = 'detail.html';
               }
 
               if(count > 1) {
