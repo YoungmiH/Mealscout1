@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- <link rel="stylesheet" href="assets/demo.css"> -->
-<!-- <script src="https://kit.fontawesome.com/51ccae8c09.js"></script> -->
+<script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
+
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
 <script src="build/tracking.js"></script>
-<!-- <script src="template.js"></script> -->
 
 <head>
 
@@ -29,7 +29,7 @@
   .title{
     font-size:26px;
     font-family: 'Staatliches', cursive;
-    color: #EB6800;
+    color: #F35F61;
 
   }
   </style>
@@ -41,13 +41,16 @@
 <body>
 
   <div id="devices"></div>
+  <div class="sticky-header">
 
   <div class="w3-bar w3-white"  display= "inline-block">
-    <!-- <a href="#" class="w3-bar-item w3-button w3-xlarge w3-text-orange" style="width:56px"><i class="fas fa-list"></i></a> -->
-    <div class="title w3-bar-item" align="center" style="width:360px" display= "inline-block">Meal Scout</div>
-    <!-- <a href="#" class="w3-bar-item w3-button" ><i class="fas fa-list"></i></a> -->
+    <a href="shoppinglist.html" class="w3-bar-item w3-button w3-xlarge w3-hover-red" style="width:56px;padding:10px 0; color:#F35F61;"><i class="fas fa-list"></i></a>
+    <div class="title w3-bar-item" align="center" style="width:304px" display= "inline-block">Meal Scout</div>
   </div>
-
+</div>
+  <!-- <div class="header w3-bar" display= "inline-block">
+   <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width: 304px; padding-top:17px; padding-bottom:9px " display= "inline-block">Select recipe</div>
+ </div> -->
 
   <!-- //feature detection -->
 
@@ -312,10 +315,8 @@ navigator.mediaDevices.enumerateDevices()
 
           <!-- <div id="container">
           <video autoplay="true" id="videoElement">
-
           </video>
           </div>
-
           <div class="w3-display-container w3-center w3-padding-16">
           Scan an item to search your meal
           </div> -->
