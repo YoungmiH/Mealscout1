@@ -7,25 +7,26 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
 
 <head>
   <style>
   .header{
-    background-color:#EB6800;
+    background-color:#F35F61;
   }
 
   .title{
     font-size:21px;
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Baloo Tamma 2', cursive;
     text-align: center;
   }
 
   .item-name{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight:bold;
     color: #616161;
@@ -34,13 +35,13 @@
   }
 
   .item-name-dollar{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     color: #616161;
   }
 
   .instructions-text{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     color: #616161;
   }
@@ -54,7 +55,7 @@
 
   .tab-direction{
     height:60px;
-    width:170px;
+    width:173px;
     padding-top:60px;
     text-align: center;
     color: #616161;
@@ -62,7 +63,7 @@
 
   .tab-ingredients{
     height:60px;
-    width:170px;
+    width:173px;
     padding-top:60px;
     text-align:center;
     color: #616161;
@@ -78,8 +79,8 @@
   }
 
   div.done-button {
-    font-family: 'Nunito', sans-serif;
-    background-color:#EB6800;
+    font-family: 'Open Sans', sans-serif;
+    background-color:#F35F61;
     font-size: 22px;
     /* height: 30px; */
     /* font-weight:bold; */
@@ -97,7 +98,6 @@
   .content{
     padding-top:10px;
     padding-bottom:20px;
-
     z-index: 2;
   }
 
@@ -126,11 +126,10 @@
 
   p.ingredient-name{
     padding-top: 20px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13.5px;
     color: #616161;
     text-align: center;
-    width: 110px;
   }
 
   .item-padding{
@@ -138,159 +137,184 @@
   }
 
   .item-img-eggs{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/eggs.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/eggs.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-eggs.checked{
+  background-image: url("item-icon/eggs-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+
+.item-img-carrot{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/carrot.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-carrot.checked{
+  background-image: url("item-icon/carrot-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-rice{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/rice.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-rice.checked{
+  background-image: url("item-icon/rice-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-spam{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/spam.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-spam.checked{
+  background-image: url("item-icon/spam-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-corn{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/corn.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-corn.checked{
+  background-image: url("item-icon/corn-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+
+
+
+.item-img-pea{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/pea.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-pea.checked{
+  background-image: url("item-icon/pea-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-onions{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/onions.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-onions.checked{
+  background-image: url("item-icon/onions-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+
+.item-img-fishsauce{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/fishsauce.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-fishsauce.checked{
+  background-image: url("item-icon/fishsauce-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-sesame-oil{
+  box-shadow: 0px 2px 4px #ccc;
+  border-radius:130px;
+  background-image: url("item-icon/sesame-oil.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+.item-img-sesame-oil.checked{
+  background-image: url("item-icon/sesame-oil-checked.png");
+  width:80px;
+  height:80px;
+  background-repeat:no-repeat;
+}
+
+  .CTA-shadow{
+    box-shadow: 0px -2px 6px 1px #DDDDDD;
   }
 
-  .item-img-eggs.checked{
-    background-image: url("item-icon/eggs-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
+  .btn {
+  position: relative;
+  background-color: #F35F61;
+  border-style: none;
+  font-size: 20px;
+  color: #FFFFFF;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+  height: 70%;
+  text-align: center;
+  text-decoration: none;
+  bottom: -10px;
+}
 
+.btn:hover{
+  background-color: #CD4344;
+  color: #FFFFFF;
+  border: none;
+}
 
-  .item-img-carrot{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/carrot.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-carrot.checked{
-    background-image: url("item-icon/carrot-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-rice{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/rice.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-rice.checked{
-    background-image: url("item-icon/rice-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-spam{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/spam.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-spam.checked{
-    background-image: url("item-icon/spam-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-corn{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/corn.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-corn.checked{
-    background-image: url("item-icon/corn-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-
-
-
-  .item-img-pea{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/pea.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-pea.checked{
-    background-image: url("item-icon/pea-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-onions{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/onions.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-onions.checked{
-    background-image: url("item-icon/onions-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-
-  .item-img-fishsauce{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/fishsauce.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-fishsauce.checked{
-    background-image: url("item-icon/fishsauce-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-sesame-oil{
-    box-shadow: 0px 2px 4px #ccc;
-    border-radius:130px;
-    background-image: url("item-icon/sesame-oil.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  .item-img-sesame-oil.checked{
-    background-image: url("item-icon/sesame-oil-checked.png");
-    width:80px;
-    height:80px;
-    background-repeat:no-repeat;
-  }
-
-  div.sticky-header{
-    position: sticky;
-    top: 0;
-    z-index: 3;
-  }
+.btn:focus{
+  outline: 0;
+  box-shadow: 0 0 2px 0.5px #FF9899;
+}
 
 
 
@@ -306,10 +330,10 @@
   <div class="sticky-header">
 
     <div class="header w3-bar" display= "inline-block">
-      <a href="detail2.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
-      <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:304px;padding:13px 0;padding-right:50px;" display= "inline-block">Recipe details</div>
-    </div>
-
+     <a href="detail2.html" class="w3-bar-item w3-button w3-xlarge w3-text-white w3-hover-red" style="width:16%;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
+     <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width: 68%; padding-top:17px; padding-bottom:9px " display= "inline-block">Recipe detail</div>
+     <a href="shoppinglist.html" class="w3-bar-item w3-button w3-xlarge w3-hover-red" style="width:16%; padding-left:0px; padding-right:0px; color:#FFFFFF;"><i class="fas fa-shopping-cart"></i></a>
+   </div>
 
     <div class="recipe-card w3-card w3-center w3-padding-large w3-text-dark-gray" >
       <div class="w3-container w3-cell" style="height:100px">
@@ -324,15 +348,16 @@
 
 
 
-    <div class="tab-button w3-container">
-      <div class="w3-bar">
-        <a href="javascript:void(0)" onclick="openCity(event, 'London');">
-          <div class="tab-ingredients w3-cell tablink w3-bottombar w3-padding">Ingredients</div></a>
-          <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
-            <div class="tab-direction w3-cell tablink w3-bottombar w3-padding">Instructions</div></a>
-          </div>
+    <ul class="nav nav-pills nav-fill" style="border-bottom: 1px solid #D0D0D0;">
+      <li class="nav-item">
+        <a class="nav-link active" href="#" style="background-color: #F35F61; border-radius: 0px;">Ingredients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Instructions2.html" style="background-color: #FFFFFF; color: #F35F61; border-radius: 0px;">Instructions</a>
+      </li>
+    </ul>
+  </div>
 
-        </div>
       </div>
 
       <div class="content">
@@ -417,9 +442,12 @@
 
         </div>
 
-        <a href="shoppinglist2.html">
-          <div class="done-button w3-button w3-block">Go to Shopping List</div>
-        </a>
+        <!-- CTA -->
+                <div class="bottom-sheet CTA-shadow" style="background-color: #FFFFFF; position: sticky; bottom: 0; border-radius: 0px; height: 70px">
+                  <a href="shoppinglist2.html" style="text-decoration: none;">
+                    <button type="button" class="btn ">Shopping List</button>
+                  </a>
+                </div>
 
         <!-- </div> -->
 
